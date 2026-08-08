@@ -1,0 +1,17 @@
+streamlit
+python-dotenv
+pandas
+
+langchain
+langchain-core
+langchain-sarvam
+
+sarvamai
+
+pydantic
+
+scikit-learn
+
+chromadb
+
+pytest

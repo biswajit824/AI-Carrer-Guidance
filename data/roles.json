@@ -1,0 +1,53 @@
+[
+    {
+        "role": "GenAI Engineer",
+        "category": "Artificial Intelligence",
+        "skills": [
+            "Python",
+            "LLM",
+            "Prompt Engineering",
+            "RAG",
+            "REST API",
+            "Vector Database",
+            "Docker"
+        ],
+        "difficulty": "Intermediate"
+    },
+    {
+        "role": "Machine Learning Engineer",
+        "category": "Artificial Intelligence",
+        "skills": [
+            "Python",
+            "Machine Learning",
+            "Statistics",
+            "SQL",
+            "TensorFlow",
+            "Scikit-learn"
+        ],
+        "difficulty": "Intermediate"
+    },
+    {
+        "role": "Data Scientist",
+        "category": "Data Science",
+        "skills": [
+            "Python",
+            "Statistics",
+            "SQL",
+            "Machine Learning",
+            "Data Visualization"
+        ],
+        "difficulty": "Intermediate"
+    },
+    {
+        "role": "Backend Developer",
+        "category": "Software Development",
+        "skills": [
+            "Python",
+            "REST API",
+            "SQL",
+            "Git",
+            "Database"
+        ],
+        "difficulty": "Intermediate"
+    }
+]
