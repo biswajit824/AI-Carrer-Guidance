@@ -178,11 +178,36 @@ if "results" in st.session_state:
     6. Give a practical 30/60/90-day roadmap.
     """
 
+
+#     question = """
+# Generate the complete personalized career guidance report
+# using the required structure.
+
+# Make the recommendations practical and specific to this student.
+# Consider the student's branch, year, current skills, preferred role,
+# projects and available learning hours.
+# """
+
     chain = create_career_chain()
 
-    with st.spinner(
-        "Generating personalized guidance..."
-    ):
+    # with st.spinner(
+    #     "Generating personalized guidance..."
+    # ):
+
+    #     response = chain.invoke(
+    #         {
+    #             "profile": profile,
+    #             "context": context,
+    #             "question": question
+    #         }
+    #     )
+
+
+with st.spinner(
+    "Generating personalized guidance..."
+):
+
+    try:
 
         response = chain.invoke(
             {
@@ -192,7 +217,42 @@ if "results" in st.session_state:
             }
         )
 
+        st.write("DEBUG: Sarvam responded")
+
+        st.write(
+            "DEBUG response length:",
+            len(response.content)
+        )
+
+        st.write(
+            "DEBUG metadata:",
+            response.response_metadata
+        )
+
+        st.session_state["ai_response"] = (
+            response.content
+        )
+
+    except Exception as e:
+
+        st.error(
+            "AI generation failed."
+        )
+
+        st.exception(e)
+
+        st.session_state["ai_response"] = ""
+
+        
+
+    # st.session_state["ai_response"] = response.content
     st.session_state["ai_response"] = response.content
+
+#     st.write(
+#         "Generated response length:",
+#         len(response.content),
+#         "characters"
+# )
 
     st.header("🤖 Personalized AI Guidance")
 
