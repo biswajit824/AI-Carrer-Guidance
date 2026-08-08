@@ -135,100 +135,100 @@ if st.button(
 # AI PERSONALIZED GUIDANCE
 # # --------------------------------
 
-# if "results" in st.session_state:
+if "results" in st.session_state:
 
-#     best_role = st.session_state["results"][0]
+    best_role = st.session_state["results"][0]
 
-#     profile = f"""
-#     Branch: {branch}
-#     Year: {year}
-#     Skills: {', '.join(skills_input)}
-#     Preferred Role: {preferred_role}
-#     Learning Hours Per Day: {learning_hours}
-#     Preferred Language: {language}
-#     Projects: {projects}
-#     """
+    profile = f"""
+    Branch: {branch}
+    Year: {year}
+    Skills: {', '.join(skills_input)}
+    Preferred Role: {preferred_role}
+    Learning Hours Per Day: {learning_hours}
+    Preferred Language: {language}
+    Projects: {projects}
+    """
 
-#     context = f"""
-#     Recommended Role:
-#     {best_role['role']}
+    context = f"""
+    Recommended Role:
+    {best_role['role']}
 
-#     Skill Match:
-#     {best_role['score']}%
+    Skill Match:
+    {best_role['score']}%
 
-#     Matching Skills:
-#     {', '.join(best_role['matched_skills'])}
+    Matching Skills:
+    {', '.join(best_role['matched_skills'])}
 
-#     Missing Skills:
-#     {', '.join(best_role['missing_skills'])}
+    Missing Skills:
+    {', '.join(best_role['missing_skills'])}
 
-#     Suggested Beginner Projects:
-#     {', '.join(best_role['projects'])}
-#     """
+    Suggested Beginner Projects:
+    {', '.join(best_role['projects'])}
+    """
 
-#     question = """
-#     Analyze this student's profile.
+    question = """
+    Analyze this student's profile.
 
-#     Explain:
-#     1. Why this role is suitable.
-#     2. Their current strengths.
-#     3. Their major skill gaps.
-#     4. What they should learn first.
-#     5. What project they should build.
-#     6. Give a practical 30/60/90-day roadmap.
-#     """
+    Explain:
+    1. Why this role is suitable.
+    2. Their current strengths.
+    3. Their major skill gaps.
+    4. What they should learn first.
+    5. What project they should build.
+    6. Give a practical 30/60/90-day roadmap.
+    """
 
-#     chain = create_career_chain()
+    chain = create_career_chain()
 
-#     with st.spinner(
-#         "Generating personalized guidance..."
-#     ):
+    with st.spinner(
+        "Generating personalized guidance..."
+    ):
 
-#         response = chain.invoke(
-#             {
-#                 "profile": profile,
-#                 "context": context,
-#                 "question": question
-#             }
-#         )
+        response = chain.invoke(
+            {
+                "profile": profile,
+                "context": context,
+                "question": question
+            }
+        )
 
-#     st.session_state["ai_response"] = response.content
+    st.session_state["ai_response"] = response.content
 
-#     st.header("🤖 Personalized AI Guidance")
+    st.header("🤖 Personalized AI Guidance")
 
-#     st.markdown(
-#         st.session_state["ai_response"]
-#     )
+    st.markdown(
+        st.session_state["ai_response"]
+    )
 
 
 
-# # Chat interface
-# # 
-# # 
-# st.header("💬 Career Q&A")
-# if "messages" not in st.session_state:
+# Chat interface
+# 
+# 
+st.header("💬 Career Q&A")
+if "messages" not in st.session_state:
 
-#     st.session_state.messages = []
+    st.session_state.messages = []
 
-# for message in st.session_state.messages:
+for message in st.session_state.messages:
 
-#     with st.chat_message(
-#         message["role"]
-#     ):
+    with st.chat_message(
+        message["role"]
+    ):
 
-#         st.markdown(
-#             message["content"]
-#         )
+        st.markdown(
+            message["content"]
+        )
 
-# user_question = st.chat_input(
-#     "Ask a career question..."
-# )
+user_question = st.chat_input(
+    "Ask a career question..."
+)
 
-# if user_question:
+if user_question:
 
-#     st.session_state.messages.append(
-#         {
-#             "role": "user",
-#             "content": user_question
-#         }
-#     )
+    st.session_state.messages.append(
+        {
+            "role": "user",
+            "content": user_question
+        }
+    )
