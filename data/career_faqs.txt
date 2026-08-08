@@ -1,0 +1,46 @@
+Machine Learning Engineer
+
+A Machine Learning Engineer develops and deploys machine learning models.
+
+Important skills include:
+
+Python
+NumPy
+Pandas
+Scikit-learn
+Machine Learning
+Statistics
+SQL
+Data Preprocessing
+Model Evaluation
+
+Beginner projects include:
+
+House Price Prediction
+Customer Churn Prediction
+Spam Detection
+Student Performance Prediction
+
+Important interview topics include:
+
+Linear Regression
+Logistic Regression
+Decision Trees
+Random Forest
+Classification
+Regression
+Feature Engineering
+Cross Validation
+Model Evaluation
+
+Recommended learning path:
+
+First learn Python.
+
+Then learn NumPy and Pandas.
+
+Then learn statistics and machine learning fundamentals.
+
+After that build beginner machine learning projects.
+
+Finally learn model deployment and MLOps.

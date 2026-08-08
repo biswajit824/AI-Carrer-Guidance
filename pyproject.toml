@@ -11,8 +11,11 @@ dependencies = [
     "chromadb>=1.5.9",
     "faiss-cpu>=1.15.0",
     "langchain>=1.3.14",
+    "langchain-chroma>=1.1.0",
     "langchain-core>=1.5.3",
+    "langchain-huggingface>=1.2.2",
     "langchain-sarvam>=0.1.2",
+    "langchain-text-splitters>=1.1.2",
     "pandas>=3.0.5",
     "protobuf>=7.35.1",
     "pydantic>=2.13.4",
@@ -21,8 +24,11 @@ dependencies = [
     "sarvam>=0.0.0",
     "sarvamai>=0.1.30",
     "scikit-learn>=1.9.0",
+    "sentence-transformers>=5.7.0",
     "streamlit>=1.61.1",
     "tiktoken>=0.13.0",
+    "torch>=2.13.0",
+    "torchvision>=0.28.0",
 ]
 
 [project.scripts]

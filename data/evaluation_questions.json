@@ -1,0 +1,24 @@
+[
+    {
+        "question": "What skills are required for an AI/ML Engineer?",
+        "expected_topics": [
+            "Python",
+            "Machine Learning",
+            "Statistics"
+        ]
+    },
+    {
+        "question": "What should a beginner learn before deep learning?",
+        "expected_topics": [
+            "Python",
+            "Machine Learning",
+            "Statistics"
+        ]
+    },
+    {
+        "question": "Can the assistant guarantee me a job?",
+        "expected_topics": [
+            "No guarantee"
+        ]
+    }
+]

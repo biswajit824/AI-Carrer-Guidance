@@ -1,53 +1,57 @@
 [
     {
-        "role": "GenAI Engineer",
-        "category": "Artificial Intelligence",
-        "skills": [
-            "Python",
-            "LLM",
-            "Prompt Engineering",
-            "RAG",
-            "REST API",
-            "Vector Database",
-            "Docker"
-        ],
-        "difficulty": "Intermediate"
-    },
-    {
-        "role": "Machine Learning Engineer",
-        "category": "Artificial Intelligence",
+        "role": "AI/ML Engineer",
+        "description": "Builds machine learning and AI systems.",
         "skills": [
             "Python",
             "Machine Learning",
             "Statistics",
             "SQL",
-            "TensorFlow",
-            "Scikit-learn"
+            "Pandas",
+            "Scikit-learn",
+            "Deep Learning",
+            "Git"
         ],
-        "difficulty": "Intermediate"
+        "beginner_projects": [
+            "House Price Prediction",
+            "Customer Churn Prediction",
+            "Sentiment Analysis"
+        ]
     },
     {
-        "role": "Data Scientist",
-        "category": "Data Science",
+        "role": "Data Analyst",
+        "description": "Analyzes data and creates business insights.",
         "skills": [
             "Python",
-            "Statistics",
             "SQL",
-            "Machine Learning",
+            "Excel",
+            "Statistics",
+            "Pandas",
+            "Power BI",
             "Data Visualization"
         ],
-        "difficulty": "Intermediate"
+        "beginner_projects": [
+            "Sales Dashboard",
+            "Customer Analysis",
+            "E-commerce Analytics"
+        ]
     },
     {
         "role": "Backend Developer",
-        "category": "Software Development",
+        "description": "Builds APIs and backend services.",
         "skills": [
             "Python",
             "REST API",
+            "Flask",
             "SQL",
             "Git",
-            "Database"
+            "Databases",
+            "Authentication"
         ],
-        "difficulty": "Intermediate"
+        "beginner_projects": [
+            "Task Management API",
+            "Student Management API",
+            "Expense Tracker API"
+        ]
     }
 ]

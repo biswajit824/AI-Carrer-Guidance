@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Python Fundamentals",
+        "category": "Programming",
+        "level": "Beginner",
+        "skills": [
+            "Python"
+        ],
+        "description": "Variables, functions, loops, data structures and object-oriented programming."
+    },
+    {
+        "title": "Machine Learning Fundamentals",
+        "category": "AI/ML",
+        "level": "Beginner",
+        "skills": [
+            "Machine Learning",
+            "Python",
+            "Statistics"
+        ],
+        "description": "Supervised learning, unsupervised learning, model evaluation and preprocessing."
+    },
+    {
+        "title": "SQL for Data Analysis",
+        "category": "Database",
+        "level": "Beginner",
+        "skills": [
+            "SQL",
+            "Data Analysis"
+        ],
+        "description": "SELECT, JOIN, GROUP BY, aggregation, subqueries and analytical queries."
+    }
+]

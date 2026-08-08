@@ -1,4 +1,4 @@
-from ai_carrer_guidance.llm.chains import create_career_chain
+from src.llm.chains import create_career_chain
 
 
 def main():

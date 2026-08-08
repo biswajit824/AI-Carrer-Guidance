@@ -1,6 +1,6 @@
 from langchain_sarvam import ChatSarvam
 
-from ai_carrer_guidance.config import SARVAM_MODEL
+from src.config import SARVAM_MODEL
 
 
 def get_sarvam_llm():
