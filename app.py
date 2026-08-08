@@ -190,24 +190,10 @@ if "results" in st.session_state:
 
     chain = create_career_chain()
 
-    # with st.spinner(
-    #     "Generating personalized guidance..."
-    # ):
 
-    #     response = chain.invoke(
-    #         {
-    #             "profile": profile,
-    #             "context": context,
-    #             "question": question
-    #         }
-    #     )
-
-
-with st.spinner(
-    "Generating personalized guidance..."
-):
-
-    try:
+    with st.spinner(
+        "Generating personalized guidance..."
+    ):
 
         response = chain.invoke(
             {
@@ -217,33 +203,6 @@ with st.spinner(
             }
         )
 
-        st.write("DEBUG: Sarvam responded")
-
-        st.write(
-            "DEBUG response length:",
-            len(response.content)
-        )
-
-        st.write(
-            "DEBUG metadata:",
-            response.response_metadata
-        )
-
-        st.session_state["ai_response"] = (
-            response.content
-        )
-
-    except Exception as e:
-
-        st.error(
-            "AI generation failed."
-        )
-
-        st.exception(e)
-
-        st.session_state["ai_response"] = ""
-
-        
 
     # st.session_state["ai_response"] = response.content
     st.session_state["ai_response"] = response.content
