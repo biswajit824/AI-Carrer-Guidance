@@ -4,7 +4,7 @@ from src.data.loader import load_json
 from src.career.matcher import rank_roles
 from src.career.skill_gap import analyze_skill_gap
 from src.career.roadmap import create_roadmap
-
+from src.llm.tts import generate_speech
 from src.llm.chains import create_career_chain
 
 
@@ -75,6 +75,15 @@ with col2:
             "Kannada"
         ]
     )
+
+    LANGUAGE_CODES = {
+    "English": "en-IN",
+    "Hindi": "hi-IN",
+    "Odia": "od-IN",
+    "Tamil": "ta-IN",
+    "Telugu": "te-IN",
+    "Kannada": "kn-IN"
+}
 
 
 
@@ -199,7 +208,8 @@ if "results" in st.session_state:
             {
                 "profile": profile,
                 "context": context,
-                "question": question
+                "question": question,
+                "language": language
             }
         )
 
@@ -207,11 +217,11 @@ if "results" in st.session_state:
     # st.session_state["ai_response"] = response.content
     st.session_state["ai_response"] = response.content
 
-#     st.write(
-#         "Generated response length:",
-#         len(response.content),
-#         "characters"
-# )
+    st.write(
+        "Generated response length:",
+        len(response.content),
+        "characters"
+)
 
     st.header("🤖 Personalized AI Guidance")
 
@@ -221,33 +231,144 @@ if "results" in st.session_state:
 
 
 
+
+
+
+    st.divider()
+
+    st.subheader("🔊 Listen to Your Career Guidance")
+
+    if st.button("🔊 Listen", type="secondary"):
+
+
+        with st.spinner("Generating voice..."):
+         
+
+         try:
+
+
+            audio = generate_speech(
+                st.session_state["ai_response"],
+                language
+            )
+
+            st.session_state["audio"] = audio
+
+         except Exception as e:
+
+            st.error(
+                f"Voice generation failed: {e}"
+            )
+
+    if "audio" in st.session_state:
+
+     st.audio(
+        st.session_state["audio"],
+        format="audio/wav"
+    )        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Chat interface
 # 
-# 
-st.header("💬 Career Q&A")
-if "messages" not in st.session_state:
+# # 
+# st.header("💬 Career Q&A")
+# if "messages" not in st.session_state:
 
-    st.session_state.messages = []
+#     st.session_state.messages = []
 
-for message in st.session_state.messages:
+# for message in st.session_state.messages:
 
-    with st.chat_message(
-        message["role"]
-    ):
+#     with st.chat_message(
+#         message["role"]
+#     ):
 
-        st.markdown(
-            message["content"]
-        )
+#         st.markdown(
+#             message["content"]
+#         )
 
-user_question = st.chat_input(
-    "Ask a career question..."
+# user_question = st.chat_input(
+#     "Ask a career question..."
+# )
+
+# if user_question:
+
+#     st.session_state.messages.append(
+#         {
+#             "role": "user",
+#             "content": user_question
+#         }
+#     )
+
+
+
+import main
+
+
+if __name__ == "__main__":
+    main.run_app()
+
+
+
+
+
+
+
+
+
+
+
+
+
+from QnA.langchain_helper import (
+    get_qa_chain,
+    create_vector_db
 )
 
-if user_question:
+# st.header("💬 Career Q&A")
+st.title("Career Q&A")
 
-    st.session_state.messages.append(
-        {
-            "role": "user",
-            "content": user_question
-        }
-    )
+
+btn = st.button("Create Knowledgebase")
+
+if btn:
+    create_vector_db()
+    st.success("Knowledgebase created successfully!")
+
+
+question = st.text_input("Question:")
+
+
+if question:
+
+    chain = get_qa_chain()
+
+    response = chain.invoke(question)
+
+    st.header("Answer")
+    st.write(response)
+
+
+
+
+
+
+
+
+
+
+
